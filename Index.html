@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>¡Mi Gran Pregunta! 💘</title>
+</head>
+<body style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(45deg, #ff69b4, #ff1493); font-family: 'Arial'; cursor: default">
+    <div style="text-align: center; padding: 30px; background: rgba(255,255,255,0.9); border-radius: 20px; box-shadow: 0 0 30px rgba(0,0,0,0.2); max-width: 500px;">
+        <h1 style="color: #c71585; font-size: 2em; margin-bottom: 20px;">💝 ¿Quieres ser mi San Valentín BAO? 💝</h1>
+        
+        <div style="position: relative; margin: 30px 0; min-height: 60px;">
+            <button onclick="aceptar()" style="padding: 15px 40px; font-size: 1.2em; background: #c71585; color: white; border: none; border-radius: 25px; cursor: pointer; margin: 10px;">
+                ¡Sí, por supuesto! 😍
+            </button>
+            
+            <button id="btnNo" style="padding: 15px 40px; font-size: 1.2em; background: #9370db; color: white; border: none; border-radius: 25px; cursor: pointer; margin: 10px; position: absolute; transition: 0.3s all;">
+                🤔 NO...
+            </button>
+        </div>
+
+        <div id="mensaje" style="display: none; font-size: 1.5em; color: #c71585; margin-top: 20px;">
+            ¡Sabía que dirías que sí! 💖<br>
+            💖 TE AMO AMOR MIO 💖 <br>
+            Redirigiendo en 10 segundos...
+        </div>
+    </div>
+
+    <audio id="musica" muted>
+        <source src="spotidownloader.com - Daylight - Taylor Swift.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        document.addEventListener("click", function() {
+            let musica = document.getElementById("musica");
+            musica.muted = false;
+            musica.play();
+        }, { once: true }); // Solo ejecuta la acción una vez
+    </script>
+    
+
+    <script>
+        // Función para mover el botón "No"
+        function moverBoton() {
+            const boton = document.getElementById('btnNo');
+            const x = Math.random() * 80;
+            const y = Math.random() * 80;
+            boton.style.left = x + '%';
+            boton.style.top = y + '%';
+        }
+
+        // Eventos para el botón "No"
+        document.getElementById('btnNo').addEventListener('mouseover', moverBoton);
+        document.getElementById('btnNo').addEventListener('click', moverBoton);
+
+        // Función para aceptar
+        function aceptar() {
+            document.getElementById('mensaje').style.display = 'block';
+            document.querySelector('button').style.display = 'none';
+            document.getElementById('btnNo').style.display = 'none';
+            
+            setTimeout(function() {
+                window.location.href = 'https://drive.google.com/file/d/1JiZSyGzxZvLV1XUFC0VyM0tnU0lU58AS/view?usp=sharing';  // Reemplaza con tu link
+            }, 10000);
+        }
+    </script>
+</body>
+</html>
